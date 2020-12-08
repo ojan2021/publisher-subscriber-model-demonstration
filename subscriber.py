@@ -3,7 +3,8 @@ import sys
 
 context = zmq.Context()
 s=context.socket(zmq.SUB)  # Note.
-s.setsockopt_string(zmq.SUBSCRIBE, '')  # Note.
+s.setsockopt_string(zmq.SUBSCRIBE, 'Folder')  # Note.
+s.subscribe('\n')
 
 p = 'tcp://' + str(sys.argv[1]) + ':' + str(sys.argv[2])  # how and where to communicate
                                                           # (Program gets IP address and Port number from the user via commandline arguements
